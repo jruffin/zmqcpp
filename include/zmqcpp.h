@@ -188,6 +188,7 @@ enum SocketOption {
   conflate = ZMQ_CONFLATE,
   last_endpoint = ZMQ_LAST_ENDPOINT,
   xpub_verbose = ZMQ_XPUB_VERBOSE,
+  invert_matching = ZMQ_INVERT_MATCHING,
 };
 
 enum PollOption {
@@ -617,7 +618,8 @@ private:
            option == rcvmore || option == fd || option == events ||
            option == immediate || option == probe_router ||
            option == req_correlate || option == req_relaxed ||
-           option == conflate || option == xpub_verbose;
+           option == conflate || option == xpub_verbose ||
+           option == invert_matching;
     #else
     return option == linger || option == reconnect_ivl ||
            option == reconnect_ivl_max || option == backlog ||
